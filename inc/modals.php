@@ -1,6 +1,9 @@
+
+
 <!---------------- MODAL &aacute;REA ---------------->
 
 <?php
+include("../config.php");
 if (isset($_POST['descricaoArea'])) {
     $descricao = $_POST['descricaoArea'];
     $query = odbc_exec($db, "INSERT INTO Area (descricao) VALUES ('$descricao')");

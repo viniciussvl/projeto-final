@@ -195,7 +195,7 @@ echo "<div class='container'>";
                         <div class="form-group">
                             <label for="tituloImagem" class="col-sm-3 control-label">T&iacute;tulo da Imagem</label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" name="tituloImagem" value="<?= $tituloImagem?>">
+                                <input class="form-control" type="text" name="tituloImagem" value="<?= @$tituloImagem?>">
                             </div>
                         </div>
                     </td>

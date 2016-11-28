@@ -83,26 +83,6 @@ $query = odbc_exec($db, "SELECT nome, codProfessor, email, tipo FROM Professor O
 <div class="clearfix"></div>
 <fieldset>
     <legend>Professores</legend>
-    <div class="barra-navegacao col-md-8">
-        <form class="form-inline left" method="GET" > 
-            <input type="hidden" name="pagina" value="<?php echo $pagina; ?>">
-            <div class="form-group">
-                <label for="listar">Listar por</label>
-                <select id="filtro" name="filtro" class="form-control" onchange="this.value !== 'nAtualiza' && this.form.submit()">
-                    <option value="">Selecione</option>
-                    <option value="nomeA" 
-<?php
-if (isset($filtro) && $filtro == "nomeA" || isset($filtro) && $filtro == "nomeD") {
-    echo "selected";
-}
-?>> Nome
-                    </option>
-
-                </select>
-            </div>
-        </form> 
-
-    </div>
     <table class="tabela table table-bordered table-striped">
         <tr>
             <th>

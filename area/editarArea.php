@@ -14,7 +14,7 @@ if(!isset($_GET['id']) && !is_numeric($_GET['id'])){
 
 <form id="editarArea" class="form-horizontal" method="POST">
     <div class="form-group">
-        <label for="descricao" class="col-sm-2 control-label">Área:</label>
+        <label for="descricao" class="col-sm-2 control-label">&Aacute;rea:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" name="descricao" value="<?= $descricao; ?>">
             <input type="submit" class="btn btn-primary" value="Editar">

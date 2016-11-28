@@ -192,7 +192,7 @@ if (isset($_GET['removido']) && $_GET['removido'] == 'true') {
 if (isset($_GET['desativada']) && $_GET['desativada'] == 'true') {
     echo "<div class='alert alert-success alert-dismissible' role='alert'>
   <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-  Essa quest&atilde;o não pode ser removida e foi desativada
+  Essa quest&atilde;o n&atilde;o pode ser removida e foi desativada
 </div>";
 }
 if (isset($_GET['editado']) && $_GET['editado'] == 'true') {
