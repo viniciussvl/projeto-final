@@ -1,24 +1,22 @@
 <?php
 session_start();
-$_SESSION['tipoProfessor'] = 'D';
-$tipoProf = $_SESSION['tipoProfessor'];
+isset($_SESSION['tipoProfessor']) ? $tipoProf = $_SESSION['tipoProfessor'] : $tipoProf = "";
 include("../integracao/loginFunc.php");
 lidaBasicAuthentication('../../portal/naoautorizado.php');
 
- if(!isset($_SESSION['codProfessor']) || (!is_numeric($_SESSION['codProfessor']))){
+/* if(!isset($_SESSION['codProfessor']) || (!is_numeric($_SESSION['codProfessor']))){
     echo '<br><br><br><center>Acesso Negado';
     exit();
-} 
+} */
 ini_set('default_charset', 'ISO-8859-1');
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="ISO-8859-1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Projeto Integrador II</title>
+        <title>SenaQuiz</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/estilo.css">
         <script src="../js/javascript.js"></script>
@@ -53,3 +51,5 @@ ini_set('default_charset', 'ISO-8859-1');
 <?php
 include("modals.php");
 ?>
+
+<br>

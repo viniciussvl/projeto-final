@@ -1,8 +1,10 @@
 <?php
+error_reporting(0);
+session_start();
 if (!isset($_GET['id']) && !is_numeric($_GET['id'])) {
     header("Location: index.php");
 }
-include("../inc/header.php");
+include("../config.php");
 $id = $_GET['id'];
 $query = odbc_exec($db, "SELECT codAssunto, Assunto.descricao AS 'assunto', Assunto.codArea, Area.descricao
                          FROM Assunto
@@ -14,9 +16,18 @@ while ($row = odbc_fetch_array($query)) {
     $assunto = $row['assunto'];
     $area = $row['codArea'];
 }
-
 $listarAreas = odbc_exec($db, "SELECT codArea, descricao FROM Area");
+if (isset($_POST['descricao']) && isset($_POST['area'])) {
+    $cdArea = $_SESSION['codArea'];
+    $assunto = $_POST['descricao'];
+    $query = odbc_exec($db, "UPDATE Assunto SET descricao = '$assunto', codArea = '$cdArea' WHERE codAssunto = '$id'");
+    header("Location:index.php");
+}
+
 echo "<div class='container'>";
+include("../inc/header.php");
+
+
 ?>
 
 <form method="POST" class="form-horizontal">
@@ -52,10 +63,7 @@ echo "<div class='container'>";
     </div>
 </form>
 <?php
-if (isset($_POST['descricao']) && isset($_POST['area'])) {
-    $assunto = $_POST['descricao'];
-    $query = odbc_exec($db, "UPDATE Assunto SET descricao = '$assunto', codArea = '$codArea' WHERE codAssunto = '$id'");
-    echo "<script>location.href='index.php';</script>"; 
-}
+
+$_SESSION['codArea'] = $_POST['area'];
 include("../inc/footer.php");
 ?>

@@ -24,8 +24,10 @@ th a i{font-size: 0.80em;}
 .table-striped>tbody>tr:nth-of-type(odd){background: #fff;}
 td{color: #4f4f4f;}
 .table>tbody>tr>td{border: 1px solid #ddd;}
+#img{width: 300px; text-align: center; margin: 10px 0;}
 
-
+.bloco-img{text-align: center;}
+.bloco-img img{border-radius: 50px;}
 /* Botões */
 .btn-success{background: #84c754; border: none; border-radius: 3px; transition: 0.1s;}
 .btn-success:hover{background: #84c754; opacity: 0.8;}
@@ -37,6 +39,9 @@ td{color: #4f4f4f;}
 .barra-navegacao{margin: 0 0 10px 0;}
 .barra-navegacao select{border: 1px solid #eee; border-radius: 0; padding: 5px; font-size: 1em; height: 30px;}
 .pagination{margin: 10px 0;}
+.pagination>.active>a{background: #369fcf;}
+
+
 
 
 /* Footer */
