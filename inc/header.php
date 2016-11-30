@@ -4,10 +4,10 @@ isset($_SESSION['tipoProfessor']) ? $tipoProf = $_SESSION['tipoProfessor'] : $ti
 include("../integracao/loginFunc.php");
 lidaBasicAuthentication('../../portal/naoautorizado.php');
 
-/* if(!isset($_SESSION['codProfessor']) || (!is_numeric($_SESSION['codProfessor']))){
+if(!isset($_SESSION['codProfessor']) || (!is_numeric($_SESSION['codProfessor']))){
     echo '<br><br><br><center>Acesso Negado';
     exit();
-} */
+}
 ini_set('default_charset', 'ISO-8859-1');
 ?>
 <!DOCTYPE html>
